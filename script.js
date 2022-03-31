@@ -18,7 +18,7 @@ function carregarImagensNovasCachorros() {
             imagemCachorro.src = responseApi.message;
             listaCachorros.push(imagemCachorro.src);
             posicaoAtualArray ++;
-            document.getElementById("btnPrevious").style.visibility = "visible";
+            document.getElementById("btnVoltar").style.visibility = "visible";
         
             setTimeout( function() 
             {  
@@ -27,14 +27,14 @@ function carregarImagensNovasCachorros() {
         })
         .catch((err) => {
             
-            document.getElementById("btnPrevious").style.visibility = "hidden";
+            document.getElementById("btnVoltar").style.visibility = "hidden";
             document.querySelector(".carregar").style.visibility = "hidden";
             alert(`O seguinte erro ocorreu durante a requisição ${err}`)
         })
     }
     else if(listaCachorros.length > 0)
     {
-        document.getElementById("btnPrevious").style.visibility = "visible";
+        document.getElementById("btnVoltar").style.visibility = "visible";
         document.querySelector(".carregar").style.visibility = "hidden";
         posicaoAtualArray ++;
         imagemCachorro.src = listaCachorros[posicaoAtualArray];
@@ -44,7 +44,7 @@ function carregarImagensAnterior () {
     posicaoAtualArray --;
     imagemCachorro.src = listaCachorros[posicaoAtualArray];
     if(posicaoAtualArray <= 0){
-       document.getElementById("btnPrevious").style.visibility = "hidden";
+       document.getElementById("btnVoltar").style.visibility = "hidden";
        posicaoAtualArray = 0;
        imagemCachorro.src = listaCachorros[posicaoAtualArray];
     }
